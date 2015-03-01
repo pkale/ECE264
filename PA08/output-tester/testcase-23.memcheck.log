@@ -1,0 +1,99 @@
+==1714== Memcheck, a memory error detector
+==1714== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==1714== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==1714== Command: ./a.out 22
+==1714== Parent PID: 1709
+==1714== 
+--1714-- 
+--1714-- Valgrind options:
+--1714--    --tool=memcheck
+--1714--    --leak-check=full
+--1714--    --verbose
+--1714--    --log-file=memcheck.log
+--1714-- Contents of /proc/version:
+--1714--   Linux version 2.6.32-431.29.2.el6.x86_64 (mockbuild@x86-026.build.eng.bos.redhat.com) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-4) (GCC) ) #1 SMP Sun Jul 27 15:55:46 EDT 2014
+--1714-- Arch and hwcaps: AMD64, amd64-sse3-cx16
+--1714-- Page sizes: currently 4096, max supported 4096
+--1714-- Valgrind library directory: /usr/lib64/valgrind
+--1714-- Reading syms from /tmp/.OthqFO/a.out
+--1714-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux
+--1714--    object doesn't have a dynamic symbol table
+--1714-- Reading syms from /lib64/ld-2.12.so
+--1714--   Considering /usr/lib/debug/.build-id/3b/fa45bce0e82e1d90d37a0cc8630f97f2003bf5.debug ..
+--1714--   .. build-id is valid
+--1714-- Scheduler: using generic scheduler lock implementation.
+--1714-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+==1714== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-1714-by-pkale-on-ecegrid-thin1.ecn.purdue.edu
+==1714== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-1714-by-pkale-on-ecegrid-thin1.ecn.purdue.edu
+==1714== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-1714-by-pkale-on-ecegrid-thin1.ecn.purdue.edu
+==1714== 
+==1714== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==1714== don't want to do, unless you know exactly what you're doing,
+==1714== or are doing some strange experiment):
+==1714==   /usr/lib64/valgrind/../../bin/vgdb --pid=1714 ...command...
+==1714== 
+==1714== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==1714==   /path/to/gdb ./a.out
+==1714== and then give GDB the following command
+==1714==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=1714
+==1714== --pid is optional if only one valgrind process is running
+==1714== 
+--1714-- REDIR: 0x35ff417610 (strlen) redirected to 0x38049551 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--1714-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--1714-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so
+--1714-- REDIR: 0x35ff417480 (index) redirected to 0x4a07c30 (index)
+--1714-- REDIR: 0x35ff417500 (strcmp) redirected to 0x4a08570 (strcmp)
+--1714-- Reading syms from /lib64/libc-2.12.so
+--1714--   Considering /usr/lib/debug/.build-id/73/3ad3a438b5a695f7a63a77413f9b2c8c94e8e6.debug ..
+--1714--   .. build-id is valid
+--1714-- REDIR: 0x35ff884cd0 (strcasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--1714-- REDIR: 0x35ff886f90 (strncasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--1714-- REDIR: 0x35ff882c40 (__GI_strrchr) redirected to 0x4a07ab0 (__GI_strrchr)
+--1714-- REDIR: 0x35ff87a640 (malloc) redirected to 0x4a069ac (malloc)
+--1714-- REDIR: 0x35ff881160 (__GI_strlen) redirected to 0x4a07fb0 (__GI_strlen)
+--1714-- REDIR: 0x35ff889670 (memcpy) redirected to 0x4a08b60 (memcpy)
+--1714-- REDIR: 0x35ff87f6e0 (strcmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--1714-- REDIR: 0x35ff928420 (__strcmp_sse42) redirected to 0x4a084d0 (strcmp)
+--1714-- REDIR: 0x35ff884500 (mempcpy) redirected to 0x4a0a020 (mempcpy)
+--1714-- REDIR: 0x35ff88aaf0 (strchrnul) redirected to 0x4a09fb0 (strchrnul)
+--1714-- REDIR: 0x35ff87b520 (free) redirected to 0x4a063a9 (free)
+==1714== 
+==1714== HEAP SUMMARY:
+==1714==     in use at exit: 163 bytes in 14 blocks
+==1714==   total heap usage: 29 allocs, 15 frees, 382 bytes allocated
+==1714== 
+==1714== Searching for pointers to 14 not-freed blocks
+==1714== Checked 64,648 bytes
+==1714== 
+==1714== 21 (16 direct, 5 indirect) bytes in 1 blocks are definitely lost in loss record 13 of 14
+==1714==    at 0x4A06A2E: malloc (vg_replace_malloc.c:270)
+==1714==    by 0x40095D: List_createNode_sol (<stdin>:19)
+==1714==    by 0x400D9A: List_create (test_support_functions.c:48)
+==1714==    by 0x400FC7: make_list (test_support_functions.c:79)
+==1714==    by 0x401994: tests_List_merge (test_List_merge.c:118)
+==1714==    by 0x401FC9: main (<stdin>:159)
+==1714== 
+==1714== 142 (16 direct, 126 indirect) bytes in 1 blocks are definitely lost in loss record 14 of 14
+==1714==    at 0x4A06A2E: malloc (vg_replace_malloc.c:270)
+==1714==    by 0x40095D: List_createNode_sol (<stdin>:19)
+==1714==    by 0x400D9A: List_create (test_support_functions.c:48)
+==1714==    by 0x400DB7: List_create (test_support_functions.c:49)
+==1714==    by 0x400DB7: List_create (test_support_functions.c:49)
+==1714==    by 0x400DB7: List_create (test_support_functions.c:49)
+==1714==    by 0x400FDD: make_list (test_support_functions.c:80)
+==1714==    by 0x401987: tests_List_merge (test_List_merge.c:118)
+==1714==    by 0x401FC9: main (<stdin>:159)
+==1714== 
+==1714== LEAK SUMMARY:
+==1714==    definitely lost: 32 bytes in 2 blocks
+==1714==    indirectly lost: 131 bytes in 12 blocks
+==1714==      possibly lost: 0 bytes in 0 blocks
+==1714==    still reachable: 0 bytes in 0 blocks
+==1714==         suppressed: 0 bytes in 0 blocks
+==1714== 
+==1714== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 6 from 6)
+--1714-- 
+--1714-- used_suppression:      4 U1004-ARM-_dl_relocate_object
+--1714-- used_suppression:      2 glibc-2.5.x-on-SUSE-10.2-(PPC)-2a
+==1714== 
+==1714== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 6 from 6)

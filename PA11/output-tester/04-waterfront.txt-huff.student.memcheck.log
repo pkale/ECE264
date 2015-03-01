@@ -1,0 +1,71 @@
+==27037== Memcheck, a memory error detector
+==27037== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==27037== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==27037== Command: ./student.out t inputs/04-waterfront.txt-huff
+==27037== Parent PID: 27034
+==27037== 
+--27037-- 
+--27037-- Valgrind options:
+--27037--    --tool=memcheck
+--27037--    --leak-check=full
+--27037--    --verbose
+--27037--    --log-file=memcheck.log
+--27037-- Contents of /proc/version:
+--27037--   Linux version 2.6.32-504.1.3.el6.x86_64 (mockbuild@x86-022.build.eng.bos.redhat.com) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-9) (GCC) ) #1 SMP Fri Oct 31 11:37:10 EDT 2014
+--27037-- Arch and hwcaps: AMD64, amd64-sse3-cx16
+--27037-- Page sizes: currently 4096, max supported 4096
+--27037-- Valgrind library directory: /usr/lib64/valgrind
+--27037-- Reading syms from /tmp/.vTGpri/student.out
+--27037-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux
+--27037--    object doesn't have a dynamic symbol table
+--27037-- Reading syms from /lib64/ld-2.12.so
+--27037--   Considering /usr/lib/debug/.build-id/3b/fa45bce0e82e1d90d37a0cc8630f97f2003bf5.debug ..
+--27037--   .. build-id is valid
+--27037-- Scheduler: using generic scheduler lock implementation.
+--27037-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+==27037== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-27037-by-pkale-on-ecegrid-thin1.ecn.purdue.edu
+==27037== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-27037-by-pkale-on-ecegrid-thin1.ecn.purdue.edu
+==27037== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-27037-by-pkale-on-ecegrid-thin1.ecn.purdue.edu
+==27037== 
+==27037== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==27037== don't want to do, unless you know exactly what you're doing,
+==27037== or are doing some strange experiment):
+==27037==   /usr/lib64/valgrind/../../bin/vgdb --pid=27037 ...command...
+==27037== 
+==27037== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==27037==   /path/to/gdb ./student.out
+==27037== and then give GDB the following command
+==27037==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=27037
+==27037== --pid is optional if only one valgrind process is running
+==27037== 
+--27037-- REDIR: 0x35ff417610 (strlen) redirected to 0x38049551 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--27037-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--27037-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so
+--27037-- REDIR: 0x35ff417480 (index) redirected to 0x4a07c30 (index)
+--27037-- REDIR: 0x35ff417500 (strcmp) redirected to 0x4a08570 (strcmp)
+--27037-- Reading syms from /lib64/libc-2.12.so
+--27037--   Considering /usr/lib/debug/.build-id/73/3ad3a438b5a695f7a63a77413f9b2c8c94e8e6.debug ..
+--27037--   .. build-id is valid
+--27037-- REDIR: 0x35ff884cd0 (strcasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--27037-- REDIR: 0x35ff886f90 (strncasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--27037-- REDIR: 0x35ff882c40 (__GI_strrchr) redirected to 0x4a07ab0 (__GI_strrchr)
+--27037-- REDIR: 0x35ff87f6e0 (strcmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--27037-- REDIR: 0x35ff928420 (__strcmp_sse42) redirected to 0x4a084d0 (strcmp)
+--27037-- REDIR: 0x35ff88aaf0 (strchrnul) redirected to 0x4a09fb0 (strchrnul)
+--27037-- REDIR: 0x35ff884500 (mempcpy) redirected to 0x4a0a020 (mempcpy)
+--27037-- REDIR: 0x35ff87b520 (free) redirected to 0x4a063a9 (free)
+--27037-- REDIR: 0x35ff87a640 (malloc) redirected to 0x4a069ac (malloc)
+--27037-- REDIR: 0x35ff881160 (__GI_strlen) redirected to 0x4a07fb0 (__GI_strlen)
+==27037== 
+==27037== HEAP SUMMARY:
+==27037==     in use at exit: 0 bytes in 0 blocks
+==27037==   total heap usage: 109 allocs, 109 frees, 2,962 bytes allocated
+==27037== 
+==27037== All heap blocks were freed -- no leaks are possible
+==27037== 
+==27037== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 6 from 6)
+--27037-- 
+--27037-- used_suppression:      4 U1004-ARM-_dl_relocate_object
+--27037-- used_suppression:      2 glibc-2.5.x-on-SUSE-10.2-(PPC)-2a
+==27037== 
+==27037== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 6 from 6)

@@ -1,0 +1,250 @@
+==21639== Memcheck, a memory error detector
+==21639== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==21639== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==21639== Command: ./a.out images/02-cat-chess.ee264 student-out-11_02-cat-chess.bmp
+==21639== Parent PID: 21638
+==21639== 
+--21639-- 
+--21639-- Valgrind options:
+--21639--    --tool=memcheck
+--21639--    --leak-check=full
+--21639--    --verbose
+--21639--    --log-file=memcheck-11.log
+--21639-- Contents of /proc/version:
+--21639--   Linux version 2.6.32-431.29.2.el6.x86_64 (mockbuild@x86-026.build.eng.bos.redhat.com) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-4) (GCC) ) #1 SMP Sun Jul 27 15:55:46 EDT 2014
+--21639-- Arch and hwcaps: AMD64, amd64-sse3-cx16
+--21639-- Page sizes: currently 4096, max supported 4096
+--21639-- Valgrind library directory: /usr/lib64/valgrind
+--21639-- Reading syms from /tmp/.VOGfR1/a.out
+--21639-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux
+--21639--    object doesn't have a dynamic symbol table
+--21639-- Reading syms from /lib64/ld-2.12.so
+--21639--   Considering /usr/lib/debug/.build-id/3b/fa45bce0e82e1d90d37a0cc8630f97f2003bf5.debug ..
+--21639--   .. build-id is valid
+--21639-- Scheduler: using generic scheduler lock implementation.
+--21639-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+==21639== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-21639-by-pkale-on-ecegrid-thin1.ecn.purdue.edu
+==21639== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-21639-by-pkale-on-ecegrid-thin1.ecn.purdue.edu
+==21639== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-21639-by-pkale-on-ecegrid-thin1.ecn.purdue.edu
+==21639== 
+==21639== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==21639== don't want to do, unless you know exactly what you're doing,
+==21639== or are doing some strange experiment):
+==21639==   /usr/lib64/valgrind/../../bin/vgdb --pid=21639 ...command...
+==21639== 
+==21639== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==21639==   /path/to/gdb ./a.out
+==21639== and then give GDB the following command
+==21639==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=21639
+==21639== --pid is optional if only one valgrind process is running
+==21639== 
+--21639-- REDIR: 0x35ff417610 (strlen) redirected to 0x38049551 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--21639-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--21639-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so
+--21639-- REDIR: 0x35ff417480 (index) redirected to 0x4a07c30 (index)
+--21639-- REDIR: 0x35ff417500 (strcmp) redirected to 0x4a08570 (strcmp)
+--21639-- Reading syms from /lib64/libc-2.12.so
+--21639--   Considering /usr/lib/debug/.build-id/73/3ad3a438b5a695f7a63a77413f9b2c8c94e8e6.debug ..
+--21639--   .. build-id is valid
+--21639-- REDIR: 0x35ff884cd0 (strcasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--21639-- REDIR: 0x35ff886f90 (strncasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--21639-- REDIR: 0x35ff882c40 (__GI_strrchr) redirected to 0x4a07ab0 (__GI_strrchr)
+--21639-- REDIR: 0x35ff87f6e0 (strcmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--21639-- REDIR: 0x35ff928420 (__strcmp_sse42) redirected to 0x4a084d0 (strcmp)
+--21639-- REDIR: 0x35ff881120 (strlen) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--21639-- REDIR: 0x35ff9336f0 (__strlen_sse42) redirected to 0x4a07f90 (strlen)
+--21639-- REDIR: 0x35ff88aaf0 (strchrnul) redirected to 0x4a09fb0 (strchrnul)
+--21639-- REDIR: 0x35ff884500 (mempcpy) redirected to 0x4a0a020 (mempcpy)
+--21639-- REDIR: 0x35ff87b520 (free) redirected to 0x4a063a9 (free)
+--21639-- REDIR: 0x35ff87a640 (malloc) redirected to 0x4a069ac (malloc)
+--21639-- REDIR: 0x35ff889670 (memcpy) redirected to 0x4a08b60 (memcpy)
+--21639-- REDIR: 0x35ff881160 (__GI_strlen) redirected to 0x4a07fb0 (__GI_strlen)
+==21639== Invalid read of size 4
+==21639==    at 0x4015F8: Image_savebmp (<stdin>:224)
+==21639==    by 0x401D4C: main (<stdin>:92)
+==21639==  Address 0x4c3b2c0 is 0 bytes inside a block of size 24 free'd
+==21639==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==21639==    by 0x400D2B: Image_load (answer07.c:141)
+==21639==    by 0x401C0C: main (<stdin>:61)
+==21639== 
+==21639== Invalid read of size 4
+==21639==    at 0x40162A: Image_savebmp (<stdin>:229)
+==21639==    by 0x401D4C: main (<stdin>:92)
+==21639==  Address 0x4c3b2c4 is 4 bytes inside a block of size 24 free'd
+==21639==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==21639==    by 0x400D2B: Image_load (answer07.c:141)
+==21639==    by 0x401C0C: main (<stdin>:61)
+==21639== 
+==21639== Invalid read of size 4
+==21639==    at 0x40166E: Image_savebmp (<stdin>:234)
+==21639==    by 0x401D4C: main (<stdin>:92)
+==21639==  Address 0x4c3b2c0 is 0 bytes inside a block of size 24 free'd
+==21639==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==21639==    by 0x400D2B: Image_load (answer07.c:141)
+==21639==    by 0x401C0C: main (<stdin>:61)
+==21639== 
+==21639== Invalid read of size 4
+==21639==    at 0x40167A: Image_savebmp (<stdin>:235)
+==21639==    by 0x401D4C: main (<stdin>:92)
+==21639==  Address 0x4c3b2c4 is 4 bytes inside a block of size 24 free'd
+==21639==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==21639==    by 0x400D2B: Image_load (answer07.c:141)
+==21639==    by 0x401C0C: main (<stdin>:61)
+==21639== 
+==21639== Invalid read of size 4
+==21639==    at 0x40169A: Image_savebmp (<stdin>:239)
+==21639==    by 0x401D4C: main (<stdin>:92)
+==21639==  Address 0x4c3b2c4 is 4 bytes inside a block of size 24 free'd
+==21639==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==21639==    by 0x400D2B: Image_load (answer07.c:141)
+==21639==    by 0x401C0C: main (<stdin>:61)
+==21639== 
+--21639-- REDIR: 0x35ff8839a0 (memset) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--21639-- REDIR: 0x35ff8839e0 (__GI_memset) redirected to 0x4a09a50 (memset)
+==21639== Invalid read of size 8
+==21639==    at 0x4017AE: Image_savebmp (<stdin>:267)
+==21639==    by 0x401D4C: main (<stdin>:92)
+==21639==  Address 0x4c3b2d0 is 16 bytes inside a block of size 24 free'd
+==21639==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==21639==    by 0x400D2B: Image_load (answer07.c:141)
+==21639==    by 0x401C0C: main (<stdin>:61)
+==21639== 
+==21639== Invalid read of size 8
+==21639==    at 0x400EAB: Image_free (answer07.c:200)
+==21639==    by 0x401D83: main (<stdin>:98)
+==21639==  Address 0x4c3b2d0 is 16 bytes inside a block of size 24 free'd
+==21639==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==21639==    by 0x400D2B: Image_load (answer07.c:141)
+==21639==    by 0x401C0C: main (<stdin>:61)
+==21639== 
+==21639== Invalid read of size 8
+==21639==    at 0x400EBB: Image_free (answer07.c:201)
+==21639==    by 0x401D83: main (<stdin>:98)
+==21639==  Address 0x4c3b2c8 is 8 bytes inside a block of size 24 free'd
+==21639==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==21639==    by 0x400D2B: Image_load (answer07.c:141)
+==21639==    by 0x401C0C: main (<stdin>:61)
+==21639== 
+==21639== Invalid free() / delete / delete[] / realloc()
+==21639==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==21639==    by 0x400ED2: Image_free (answer07.c:202)
+==21639==    by 0x401D83: main (<stdin>:98)
+==21639==  Address 0x4c3b2c0 is 0 bytes inside a block of size 24 free'd
+==21639==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==21639==    by 0x400D2B: Image_load (answer07.c:141)
+==21639==    by 0x401C0C: main (<stdin>:61)
+==21639== 
+==21639== 
+==21639== HEAP SUMMARY:
+==21639==     in use at exit: 568 bytes in 1 blocks
+==21639==   total heap usage: 6 allocs, 6 frees, 69,848 bytes allocated
+==21639== 
+==21639== Searching for pointers to 1 not-freed blocks
+==21639== Checked 69,072 bytes
+==21639== 
+==21639== LEAK SUMMARY:
+==21639==    definitely lost: 0 bytes in 0 blocks
+==21639==    indirectly lost: 0 bytes in 0 blocks
+==21639==      possibly lost: 0 bytes in 0 blocks
+==21639==    still reachable: 568 bytes in 1 blocks
+==21639==         suppressed: 0 bytes in 0 blocks
+==21639== Reachable blocks (those to which a pointer was found) are not shown.
+==21639== To see them, rerun with: --leak-check=full --show-reachable=yes
+==21639== 
+==21639== ERROR SUMMARY: 9 errors from 9 contexts (suppressed: 6 from 6)
+==21639== 
+==21639== 1 errors in context 1 of 9:
+==21639== Invalid free() / delete / delete[] / realloc()
+==21639==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==21639==    by 0x400ED2: Image_free (answer07.c:202)
+==21639==    by 0x401D83: main (<stdin>:98)
+==21639==  Address 0x4c3b2c0 is 0 bytes inside a block of size 24 free'd
+==21639==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==21639==    by 0x400D2B: Image_load (answer07.c:141)
+==21639==    by 0x401C0C: main (<stdin>:61)
+==21639== 
+==21639== 
+==21639== 1 errors in context 2 of 9:
+==21639== Invalid read of size 8
+==21639==    at 0x400EBB: Image_free (answer07.c:201)
+==21639==    by 0x401D83: main (<stdin>:98)
+==21639==  Address 0x4c3b2c8 is 8 bytes inside a block of size 24 free'd
+==21639==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==21639==    by 0x400D2B: Image_load (answer07.c:141)
+==21639==    by 0x401C0C: main (<stdin>:61)
+==21639== 
+==21639== 
+==21639== 1 errors in context 3 of 9:
+==21639== Invalid read of size 8
+==21639==    at 0x400EAB: Image_free (answer07.c:200)
+==21639==    by 0x401D83: main (<stdin>:98)
+==21639==  Address 0x4c3b2d0 is 16 bytes inside a block of size 24 free'd
+==21639==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==21639==    by 0x400D2B: Image_load (answer07.c:141)
+==21639==    by 0x401C0C: main (<stdin>:61)
+==21639== 
+==21639== 
+==21639== 1 errors in context 4 of 9:
+==21639== Invalid read of size 8
+==21639==    at 0x4017AE: Image_savebmp (<stdin>:267)
+==21639==    by 0x401D4C: main (<stdin>:92)
+==21639==  Address 0x4c3b2d0 is 16 bytes inside a block of size 24 free'd
+==21639==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==21639==    by 0x400D2B: Image_load (answer07.c:141)
+==21639==    by 0x401C0C: main (<stdin>:61)
+==21639== 
+==21639== 
+==21639== 1 errors in context 5 of 9:
+==21639== Invalid read of size 4
+==21639==    at 0x40169A: Image_savebmp (<stdin>:239)
+==21639==    by 0x401D4C: main (<stdin>:92)
+==21639==  Address 0x4c3b2c4 is 4 bytes inside a block of size 24 free'd
+==21639==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==21639==    by 0x400D2B: Image_load (answer07.c:141)
+==21639==    by 0x401C0C: main (<stdin>:61)
+==21639== 
+==21639== 
+==21639== 1 errors in context 6 of 9:
+==21639== Invalid read of size 4
+==21639==    at 0x40167A: Image_savebmp (<stdin>:235)
+==21639==    by 0x401D4C: main (<stdin>:92)
+==21639==  Address 0x4c3b2c4 is 4 bytes inside a block of size 24 free'd
+==21639==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==21639==    by 0x400D2B: Image_load (answer07.c:141)
+==21639==    by 0x401C0C: main (<stdin>:61)
+==21639== 
+==21639== 
+==21639== 1 errors in context 7 of 9:
+==21639== Invalid read of size 4
+==21639==    at 0x40166E: Image_savebmp (<stdin>:234)
+==21639==    by 0x401D4C: main (<stdin>:92)
+==21639==  Address 0x4c3b2c0 is 0 bytes inside a block of size 24 free'd
+==21639==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==21639==    by 0x400D2B: Image_load (answer07.c:141)
+==21639==    by 0x401C0C: main (<stdin>:61)
+==21639== 
+==21639== 
+==21639== 1 errors in context 8 of 9:
+==21639== Invalid read of size 4
+==21639==    at 0x40162A: Image_savebmp (<stdin>:229)
+==21639==    by 0x401D4C: main (<stdin>:92)
+==21639==  Address 0x4c3b2c4 is 4 bytes inside a block of size 24 free'd
+==21639==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==21639==    by 0x400D2B: Image_load (answer07.c:141)
+==21639==    by 0x401C0C: main (<stdin>:61)
+==21639== 
+==21639== 
+==21639== 1 errors in context 9 of 9:
+==21639== Invalid read of size 4
+==21639==    at 0x4015F8: Image_savebmp (<stdin>:224)
+==21639==    by 0x401D4C: main (<stdin>:92)
+==21639==  Address 0x4c3b2c0 is 0 bytes inside a block of size 24 free'd
+==21639==    at 0x4A06430: free (vg_replace_malloc.c:446)
+==21639==    by 0x400D2B: Image_load (answer07.c:141)
+==21639==    by 0x401C0C: main (<stdin>:61)
+==21639== 
+--21639-- 
+--21639-- used_suppression:      4 U1004-ARM-_dl_relocate_object
+--21639-- used_suppression:      2 glibc-2.5.x-on-SUSE-10.2-(PPC)-2a
+==21639== 
+==21639== ERROR SUMMARY: 9 errors from 9 contexts (suppressed: 6 from 6)

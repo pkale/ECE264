@@ -1,0 +1,71 @@
+==2080== Memcheck, a memory error detector
+==2080== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==2080== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==2080== Command: ./student.out t inputs/05-badges.txt-huff
+==2080== Parent PID: 2078
+==2080== 
+--2080-- 
+--2080-- Valgrind options:
+--2080--    --tool=memcheck
+--2080--    --leak-check=full
+--2080--    --verbose
+--2080--    --log-file=memcheck.log
+--2080-- Contents of /proc/version:
+--2080--   Linux version 2.6.32-504.1.3.el6.x86_64 (mockbuild@x86-022.build.eng.bos.redhat.com) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-9) (GCC) ) #1 SMP Fri Oct 31 11:37:10 EDT 2014
+--2080-- Arch and hwcaps: AMD64, amd64-sse3-cx16
+--2080-- Page sizes: currently 4096, max supported 4096
+--2080-- Valgrind library directory: /usr/lib64/valgrind
+--2080-- Reading syms from /tmp/.vTGpri/student.out
+--2080-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux
+--2080--    object doesn't have a dynamic symbol table
+--2080-- Reading syms from /lib64/ld-2.12.so
+--2080--   Considering /usr/lib/debug/.build-id/3b/fa45bce0e82e1d90d37a0cc8630f97f2003bf5.debug ..
+--2080--   .. build-id is valid
+--2080-- Scheduler: using generic scheduler lock implementation.
+--2080-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+==2080== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-2080-by-pkale-on-ecegrid-thin1.ecn.purdue.edu
+==2080== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-2080-by-pkale-on-ecegrid-thin1.ecn.purdue.edu
+==2080== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-2080-by-pkale-on-ecegrid-thin1.ecn.purdue.edu
+==2080== 
+==2080== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==2080== don't want to do, unless you know exactly what you're doing,
+==2080== or are doing some strange experiment):
+==2080==   /usr/lib64/valgrind/../../bin/vgdb --pid=2080 ...command...
+==2080== 
+==2080== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==2080==   /path/to/gdb ./student.out
+==2080== and then give GDB the following command
+==2080==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=2080
+==2080== --pid is optional if only one valgrind process is running
+==2080== 
+--2080-- REDIR: 0x35ff417610 (strlen) redirected to 0x38049551 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--2080-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--2080-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so
+--2080-- REDIR: 0x35ff417480 (index) redirected to 0x4a07c30 (index)
+--2080-- REDIR: 0x35ff417500 (strcmp) redirected to 0x4a08570 (strcmp)
+--2080-- Reading syms from /lib64/libc-2.12.so
+--2080--   Considering /usr/lib/debug/.build-id/73/3ad3a438b5a695f7a63a77413f9b2c8c94e8e6.debug ..
+--2080--   .. build-id is valid
+--2080-- REDIR: 0x35ff884cd0 (strcasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--2080-- REDIR: 0x35ff886f90 (strncasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--2080-- REDIR: 0x35ff882c40 (__GI_strrchr) redirected to 0x4a07ab0 (__GI_strrchr)
+--2080-- REDIR: 0x35ff87f6e0 (strcmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--2080-- REDIR: 0x35ff928420 (__strcmp_sse42) redirected to 0x4a084d0 (strcmp)
+--2080-- REDIR: 0x35ff88aaf0 (strchrnul) redirected to 0x4a09fb0 (strchrnul)
+--2080-- REDIR: 0x35ff884500 (mempcpy) redirected to 0x4a0a020 (mempcpy)
+--2080-- REDIR: 0x35ff87b520 (free) redirected to 0x4a063a9 (free)
+--2080-- REDIR: 0x35ff87a640 (malloc) redirected to 0x4a069ac (malloc)
+--2080-- REDIR: 0x35ff881160 (__GI_strlen) redirected to 0x4a07fb0 (__GI_strlen)
+==2080== 
+==2080== HEAP SUMMARY:
+==2080==     in use at exit: 0 bytes in 0 blocks
+==2080==   total heap usage: 97 allocs, 97 frees, 2,662 bytes allocated
+==2080== 
+==2080== All heap blocks were freed -- no leaks are possible
+==2080== 
+==2080== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 6 from 6)
+--2080-- 
+--2080-- used_suppression:      4 U1004-ARM-_dl_relocate_object
+--2080-- used_suppression:      2 glibc-2.5.x-on-SUSE-10.2-(PPC)-2a
+==2080== 
+==2080== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 6 from 6)
