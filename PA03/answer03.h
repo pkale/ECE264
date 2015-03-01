@@ -2,6 +2,7 @@
 #define PA03_H 
 
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * Append the C-string 'src' to the end of the C-string '*dest'.
@@ -82,7 +83,7 @@ char * implode(char * * strArr, int len, const char * glue);
  * char * * strArr = explode("lady beatle brew", " ", &len);
  * sortStringArray(strArr, len);
  * char * str = implode(strArr, len, " ");
- * printf("%s\n", str); // beatle brew lady
+ * printf("%s\n"); // beatle brew lady
  *
  * Hint: use the <stdlib.h> function "qsort"
  * Hint: you must _clearly_ understand the typecasts.

@@ -1,0 +1,61 @@
+Starting program: /home/shay/a/pkale/ECE264/problems/ECE264Assignments/Fall2014/PA02/pa02 
+
+Program exited normally.
+No default breakpoint address now.
+Breakpoint 1 at 0x400526: file pa02.c, line 24.
+No line 70 in file "pa02.c".
+No line 130 in file "pa02.c".
+Breakpoint 2 at 0x400853: file answer02.c, line 40.
+Breakpoint 3 at 0x400925: file answer02.c, line 130.
+Breakpoint 4 at 0x400a02: file answer02.c, line 200.
+Starting program: /home/shay/a/pkale/ECE264/problems/ECE264Assignments/Fall2014/PA02/pa02 
+
+Breakpoint 1, main (argc=1, argv=0x7fffffffe488) at pa02.c:26
+26	    const char * s1 = "Hello World!";
+27	    const char * s2 = "";
+28	    const char * s3 = "foo";
+31	    printf("my_strlen(\"%s\") = %d\n", s1, (int) my_strlen(s1));
+32	    printf("my_strlen(\"%s\") = %d\n", s2, (int) my_strlen(s2));
+33	    printf("my_strlen(\"%s\") = %d\n", s3, (int) my_strlen(s3));
+36	    printf("my_countchar(\"%s\", 'l') = %d\n", s1, (int) my_countchar(s1, 'l'));
+
+Breakpoint 2, my_countchar (str=0x400d3c "", ch=108 'l') at answer02.c:41
+41	    return(count);
+43	}
+main (argc=1, argv=0x7fffffffe488) at pa02.c:37
+37	    printf("my_countchar(\"%s\", 'o') = %d\n", s2, (int) my_countchar(s2, 'o'));
+
+Breakpoint 2, my_countchar (str=0x400d3d "", ch=111 'o') at answer02.c:41
+41	    return(count);
+43	}
+main (argc=1, argv=0x7fffffffe488) at pa02.c:38
+38	    printf("my_countchar(\"%s\", 'o') = %d\n", s3, (int) my_countchar(s3, 'o'));
+
+Breakpoint 2, my_countchar (str=0x400d41 "", ch=111 'o') at answer02.c:41
+41	    return(count);
+43	}
+main (argc=1, argv=0x7fffffffe488) at pa02.c:41
+41	    printf("my_strchr(\"%s\", 'l') = %s\n", s1, my_strchr(s1, 'l'));
+42	    printf("my_strchr(\"%s\", 'o') = %s\n", s2, my_strchr(s2, 'o'));
+43	    printf("my_strchr(\"%s\", '\\0') = %s\n", s3, my_strchr(s3, '\0'));
+46	    printf("my_strstr(\"%s\", \"World\") = %s\n", s1, my_strstr(s1, "World"));
+47	    printf("my_strstr(\"%s\", \"\") = %s\n", s1, my_strstr(s1, ""));
+
+Breakpoint 3, my_strstr (haystack=0x400d30 "Hello World!", needle=0x400d3d "") at answer02.c:131
+131	       return (char*)index;
+143	}
+main (argc=1, argv=0x7fffffffe488) at pa02.c:48
+48	    printf("my_strstr(\"%s\", \"hello\") = %s\n", s1, my_strstr(s1, "hello"));
+53	    my_strcpy(buffer, s1);
+54	    printf("my_strcpy(buffer, \"%s\"), buffer = \"%s\"\n", s1, buffer);
+55	    my_strcpy(buffer, s2);
+56	    printf("my_strcpy(buffer, \"%s\"), buffer = \"%s\"\n", s2, buffer);
+57	    my_strcpy(buffer, s3);
+58	    printf("my_strcpy(buffer, \"%s\"), buffer = \"%s\"\n", s3, buffer);
+67	    return EXIT_SUCCESS;
+68	}
+__libc_start_main (main=0x400504 <main>, argc=1, ubp_av=0x7fffffffe488, init=<value optimized out>, 
+    fini=<value optimized out>, rtld_fini=<value optimized out>, stack_end=0x7fffffffe478) at libc-start.c:258
+258	  exit (result);
+
+Program exited normally.

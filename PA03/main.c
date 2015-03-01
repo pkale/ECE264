@@ -5,11 +5,12 @@
 
 // This does not work... fix it.
 // Hint: look up swap(int *, int *) in the course notes
-void swapString(const char * a, const char * b)
-{
-    const char * tmp = a;
-    a = b;
-    b = tmp;
+void swapString(const char * * a, const char * * b)
+{  
+  const char *  tmp;
+    tmp =*  a; 
+   * a = * b; 
+   * b =  tmp;
     printf("Calling swapString(...)\n");
     printf("&a = %p\n", &a);
     printf("&b = %p\n", &b);
@@ -38,7 +39,7 @@ int main(int argc, char * * argv)
     const char * str2 = "two";
     printf("Before swap, str1 == %p (i.e., '%s'), "
 	   "str2 == %p (i.e., '%s')\n", str1, str1, str2, str2);
-    swapString(str1, str2);
+    swapString(&str1, &str2);
     printf("After swap, str1 == %p (i.e., '%s'), "
 	   "str2 == %p (i.e., '%s')\n", str1, str1, str2, str2);
 
