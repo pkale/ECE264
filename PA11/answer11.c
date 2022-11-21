@@ -198,7 +198,7 @@ HuffNode * HuffTree_readTextHeader(FILE * fp)
 }
 
 /**
- * Read a Huffman  Coding Tree (in binary format) from 'fp'.
+ * Read a Huffman Coding Tree (in binary format) from 'fp'.
  * You will need to (conceptually) read a file a bit at a time. See the README
  * for hints on how to do this.
  */
